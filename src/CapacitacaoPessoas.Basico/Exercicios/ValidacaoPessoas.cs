@@ -28,6 +28,7 @@
         /// <returns>Verdadeiro para todas as pessoas corretas, senão falso</returns>
         public bool ValidarPessoas(Pessoa pessoaA, Pessoa pessoaB)
         {
+            //TODO: Refatorar o método, a fim de reduzir a complexidade
             bool estaValido = true;
 
             if (string.IsNullOrWhiteSpace(pessoaA.Nome) || string.IsNullOrWhiteSpace(pessoaA.Sobrenome) ||
