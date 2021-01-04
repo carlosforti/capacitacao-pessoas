@@ -43,7 +43,15 @@
         /// </summary>
         public SuperClasse()
         {
+            var acessos = new Acessos();
+            acessos.MetodoInternal();
+            acessos.MetodoPublic();
+            acessos.MetodoProtectedInternal();
 
+            var acessosChild = new AcessosChild();
+            acessosChild.MetodoInternal();
+            acessosChild.MetodoPublic();
+            acessosChild.MetodoProtectedInternal();
         }
 
         ///<summary>
