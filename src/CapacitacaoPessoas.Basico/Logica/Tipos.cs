@@ -1,4 +1,4 @@
-﻿namespace CapacitacaoPessoas.Basico.Tipos
+﻿namespace CapacitacaoPessoas.Basico.Logica
 {
     /// <summary>
     /// Tipos de dados utilizados em C#
