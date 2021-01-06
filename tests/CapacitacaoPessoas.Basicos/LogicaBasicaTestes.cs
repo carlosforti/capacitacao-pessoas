@@ -1,7 +1,5 @@
 using CapacitacaoPessoas.Basico.Exercicios;
-
 using FluentAssertions;
-
 using Xunit;
 
 namespace CapacitacaoPessoas.Basicos.Tests
@@ -43,6 +41,42 @@ namespace CapacitacaoPessoas.Basicos.Tests
         {
             var resultado = logicaBasica.SubtrairValores(valores);
             var esperado = -13;
+
+            resultado.Should().Be(esperado);
+        }
+
+        [Fact]
+        public void QuantidadePessoasComMaioridade()
+        {
+            var resultado = logicaBasica.QuantidadePessoasComMaioridade(valores, 18);
+            var esperado = 2;
+
+            resultado.Should().Be(esperado);
+        }
+
+        [Fact]
+        public void SomarNumerosImpares()
+        {
+            var resultado = logicaBasica.SomarNumerosImpares(1, 30);
+            var esperado = 225;
+
+            resultado.Should().Be(esperado);
+        }
+
+        [Fact]
+        public void QuantidadeNumerosPares()
+        {
+            var resultado = logicaBasica.QuantidadeNumerosPares(valores);
+            var esperado = 2;
+
+            resultado.Should().Be(esperado);
+        }
+
+        [Fact]
+        public void QuantidadeNumerosImpares()
+        {
+            var resultado = logicaBasica.QuantidadeNumerosImpares(valores);
+            var esperado = 5;
 
             resultado.Should().Be(esperado);
         }
