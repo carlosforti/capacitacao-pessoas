@@ -5,8 +5,8 @@ namespace CapacitacaoPessoas.Basico.Exercicios
     public class EstruturasRepeticao
     {
         /// <summary>
-        /// Escreva um algoritmo que receba a idade das pessoas, calcule e exiba a quantidade de
-        /// pessoas maiores de idade, sendo que a maioridade é obtida após se completar 18 anos.
+        /// Escreva um algoritmo que receba a idade das pessoas e a maioridade, calcule e exiba a quantidade de
+        /// pessoas com idade maior ou igual.
         /// </summary>
         /// <param name="valores">Array de inteiros com os valores</param>
         /// <param name="maioridade">Valor inteiro</param>
