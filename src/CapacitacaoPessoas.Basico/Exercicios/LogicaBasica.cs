@@ -13,7 +13,21 @@ namespace CapacitacaoPessoas.Basico.Exercicios
         /// <returns>Maior valor encontrado</returns>
         public int EncontrarMaiorValor(int[] valores)
         {
-            throw new NotImplementedException();
+            int maiorValor = 0;
+            int index = 0;
+
+            while (index < valores.Length)
+            {
+                int valor = valores[index];
+
+                if (valor > maiorValor)
+                    maiorValor = valor;
+
+                index = index + 1;
+            }
+
+            return maiorValor;
+
         }
 
         /// <summary>
@@ -23,7 +37,16 @@ namespace CapacitacaoPessoas.Basico.Exercicios
         /// <returns>Menor valor encontrado</returns>
         public int EncontrarMenorValor(int[] valores)
         {
-            throw new NotImplementedException();
+            int menorValor = 999999;
+
+            for (int index = 0; index < valores.Length; index++)
+            {
+                int valor = valores[index];
+
+                if (valor < menorValor)
+                    menorValor = valor;
+            }
+            return menorValor;
         }
 
         /// <summary>
@@ -33,7 +56,15 @@ namespace CapacitacaoPessoas.Basico.Exercicios
         /// <returns>Soma dos valores do array</returns>
         public int SomarValores(int[] valores)
         {
-            throw new NotImplementedException();
+            int somarValores = 0;
+
+            for (int index = 0; index < valores.Length; index++)
+            {
+                int valor = valores[index];
+
+                somarValores += valor;
+            }
+            return somarValores;
         }
 
         /// <summary>
@@ -44,7 +75,17 @@ namespace CapacitacaoPessoas.Basico.Exercicios
         /// <returns>Subtração dos valores do array</returns>
         public int SubtrairValores(int[] valores)
         {
-            throw new NotImplementedException();
+            int resultado = valores[0];
+
+
+            for (int contador = 1; contador < valores.Length; contador++)
+            {
+                resultado = resultado - valores[contador];
+            }
+            return resultado;
+
+            
+
         }
     }
 }

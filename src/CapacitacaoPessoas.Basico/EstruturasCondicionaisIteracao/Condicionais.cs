@@ -26,6 +26,7 @@ namespace CapacitacaoPessoas.Basico.EstruturasCondicionaisIteracao
 
         public void OperadorTernario(int valor1, int valor2)
         {
+            //Descobrir bug
             var maior = valor1 > valor2 ? valor1 : valor2;
             Csl.WriteLine($"O maior valor é {maior}");
         }
