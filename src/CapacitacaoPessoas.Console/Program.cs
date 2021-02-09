@@ -1,10 +1,9 @@
 ﻿using CapacitacaoPessoas.Basico.Classes;
 using CapacitacaoPessoas.Basico.EstruturasCondicionaisIteracao;
 using CapacitacaoPessoas.Basico.InterfacesEClasses;
+using CapacitacaoPessoas.Basico.Logica;
 using CapacitacaoPessoas.Basico.LogicaBooleana;
-
 using Microsoft.Extensions.DependencyInjection;
-
 using Csl = System.Console;
 
 namespace CapacitacaoPessoas.Console
@@ -17,7 +16,14 @@ namespace CapacitacaoPessoas.Console
                 .AddScoped<IClasseComInterface, ClasseComInterface>()
                 .BuildServiceProvider();
 
+            var acessos = new Acessos();
+            acessos.MetodoPublic();
+
+            var acessosChild = new AcessosChildConsole();
+            acessosChild.MetodoPublic();
+
             #region Condicionais e Iteracao
+
             Csl.WriteLine("Condicionais");
             var condicionais = new Condicionais();
             condicionais.UsandoIf(1, 2);
@@ -40,9 +46,11 @@ namespace CapacitacaoPessoas.Console
             iteracoes.UsandoForEach();
             Csl.WriteLine("=".PadLeft(80, '='));
             Csl.WriteLine();
+
             #endregion
 
             #region Lógica Booleana
+
             Csl.WriteLine("Lógica booleana");
             var logicaBooleana = new LogicaBooleana();
             Csl.WriteLine("And");
@@ -58,9 +66,11 @@ namespace CapacitacaoPessoas.Console
             logicaBooleana.OperadorNot();
             Csl.WriteLine("=".PadLeft(80, '='));
             Csl.WriteLine();
+
             #endregion
 
             #region Herança
+
             Csl.WriteLine("Herança");
             var superClasse = new SuperClasse(1, "String");
             var classeHeradada = new ClasseHeradada
@@ -74,16 +84,35 @@ namespace CapacitacaoPessoas.Console
             Csl.WriteLine(classeHeradada.ExibirValoresHeranca());
             Csl.WriteLine("=".PadLeft(80, '='));
             Csl.WriteLine();
+
             #endregion
 
             #region Classe usando interface (Injeção de Dependência)
 
             Csl.WriteLine("Injeção de dependência");
             var interface1 = serviceProvider.GetService<IClasseComInterface>();
-            interface1.Nome = "Carlos";
-            interface1.Sobrenome = "Forti";
-            Csl.WriteLine(interface1.NomeCompleto());
-            Csl.WriteLine("=".PadLeft(80, '='));
+            if (interface1 != null)
+            {
+                interface1.Nome = "Carlos";
+                interface1.Sobrenome = "Forti";
+                Csl.WriteLine(interface1.NomeCompleto());
+                Csl.WriteLine("=".PadLeft(80, '='));   
+            }
+
+            #endregion
+
+            #region Métodos
+
+            var endereco1 = new Endereco("12345678", "Rua das Flores", "100", null, "Limoeiro", "São Paulo", "SP");
+            var endereco2 = new Endereco("12345678", "Rua das Flores", "1000", null, "Limoeiro", "São Paulo", "SP");
+
+            var metodos = new Metodos();
+            var resultado1 = metodos.ValidarEnderecos1(endereco1, endereco2);
+            var resultado2 = metodos.ValidarEnderecos2(endereco1, endereco2);
+
+            Csl.WriteLine($"Resultado1: {resultado1}");
+            Csl.WriteLine($"Resultado2: {resultado2}");
+            
             #endregion
         }
     }
