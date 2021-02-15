@@ -84,8 +84,6 @@ namespace CapacitacaoPessoas.Basico.Exercicios
             }
             return resultado;
 
-            
-
         }
 
         /// <summary>
@@ -97,7 +95,14 @@ namespace CapacitacaoPessoas.Basico.Exercicios
         /// <returns>Valor da soma</returns>
         public int QuantidadePessoasComMaioridade(int[] valores, int maioridade)
         {
-            throw new NotImplementedException();
+            int pessoas = 0;
+
+            for (int contador = 0; contador < valores.Length; contador++)
+            {
+                if (valores[contador] >= maioridade)
+                    pessoas = pessoas + 1;
+            }
+            return pessoas;
         }
 
         /// <summary>
@@ -109,7 +114,14 @@ namespace CapacitacaoPessoas.Basico.Exercicios
         /// <returns>Valor da soma</returns>
         public int SomarNumerosImpares(int inicio, int fim)
         {
-            throw new NotImplementedException();
+            int somaimpar = 0;
+
+            for (int i = inicio; i <= fim; i++)
+            {
+                if (i % 2 == 1)
+                    somaimpar = somaimpar + i;
+            }
+            return somaimpar;
         }
 
         /// <summary>
@@ -120,7 +132,14 @@ namespace CapacitacaoPessoas.Basico.Exercicios
         /// <returns>Valor da soma</returns>
         public int QuantidadeNumerosPares(int[] valores)
         {
-            throw new NotImplementedException();
+            int quantPar = 0;
+
+            for (int c = 0; c < valores.Length; c++)
+            {
+                if (valores[c] % 2 == 0)
+                    quantPar = quantPar + 1;
+            }
+            return quantPar;
         }
 
         /// <summary>
@@ -131,7 +150,14 @@ namespace CapacitacaoPessoas.Basico.Exercicios
         /// <returns>Valor da soma</returns>
         public int QuantidadeNumerosImpares(int[] valores)
         {
-            throw new NotImplementedException();
+            int quantImpar = 0;
+
+            for (int c = 0; c < valores.Length; c++)
+            {
+                if (valores[c] % 2 == 1)
+                    quantImpar = quantImpar + 1;
+            }
+            return quantImpar;
         }
     }
 }
