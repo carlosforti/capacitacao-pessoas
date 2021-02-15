@@ -80,5 +80,26 @@ namespace CapacitacaoPessoas.Basicos.Tests
 
             resultado.Should().Be(esperado);
         }
+
+        [Fact]
+        public void CalcularDuracaoJogo()
+        {
+            var resultado = logicaBasica.CalcularDuracaoJogo(19, 2);
+            var esperado = 7;
+
+            resultado.Should().Be(esperado);
+        }
+
+        [Fact]
+        public void CalcularSalario()
+        {
+            var horasTrabalhadasMes = 181;
+            decimal valorHora = 12.50M;
+
+            var resultado = logicaBasica.CalcularSalario(horasTrabalhadasMes, valorHora);
+            var esperado = 2393.75M;
+
+            resultado.Should().Be(esperado);
+        }
     }
 }

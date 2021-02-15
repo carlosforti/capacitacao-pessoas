@@ -65,7 +65,7 @@ namespace CapacitacaoPessoas.Basico.Exercicios
                 somarValores += valor;
             }
             return somarValores;
-        }
+        }        
 
         /// <summary>
         /// Retorna a subtração dos valores do array
@@ -158,6 +158,16 @@ namespace CapacitacaoPessoas.Basico.Exercicios
                     quantImpar = quantImpar + 1;
             }
             return quantImpar;
+        }
+
+        public int CalcularDuracaoJogo(int horaInicio, int horaFim)
+        {
+            throw new NotImplementedException();
+        }
+
+        public decimal CalcularSalario(int horasTrabalhadasMes, decimal valorHora)
+        {
+            throw new NotImplementedException();
         }
     }
 }
