@@ -81,11 +81,13 @@ namespace CapacitacaoPessoas.Basicos.Tests
             resultado.Should().Be(esperado);
         }
 
-        [Fact]
-        public void CalcularDuracaoJogo()
+        [Theory]
+        [InlineData(19, 2, 7)]
+        [InlineData(10, 10, 0)]
+        [InlineData(8, 18, 10)]
+        public void CalcularDuracaoJogo(int inicio, int fim, int esperado)
         {
-            var resultado = logicaBasica.CalcularDuracaoJogo(19, 2);
-            var esperado = 7;
+            var resultado = logicaBasica.CalcularDuracaoJogo(inicio, fim);
 
             resultado.Should().Be(esperado);
         }
